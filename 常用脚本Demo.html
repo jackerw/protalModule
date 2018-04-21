@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常用脚本DEMO</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="mmyElement.css">
+	<script type="text/javascript" src="js/sea.js"></script>
+	<script type="text/javascript" src="js/seajs.config.js"></script>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		.btnList{width:600px;margin:20px 0 0 20px;padding:20px;background:#efefef;overflow: hidden;font-size:14px;}
+	   h1{font-size:24px;margin-bottom:20px;}
+	   p{font-size:14px;}
+	   .useInfo{margin:15px 0;}
+	   .useInfo span{margin:0 10px;color:#dc7d36;}
+	   .useInfo ol{padding-left:15px;}
+	   .useInfo ol li{margin-top:10px;}
+	</style>
+</head>
+<body>
+<!--全选操作-->
+<div class="btnList">
+	<h1>全选操作</h1>
+	<article class="useInfo">
+		<b>使用方法：</b>
+		<ol>
+			<li>组件层级结构（父子结构）必须按照例子的结构来，全选以及选择的位置可以随意。</li>
+			<li>最外层设置 <span>data-toggle="checkAll"</span></li>
+			<li>全选增加个name值<span>name="checkAll"</span></li>
+		</ol>
+	</article>
+	<div data-toggle="checkAll">
+		<label>
+			<input type="checkbox" name="checkAll">
+			全选
+		</label>
+		<div>
+			<label>
+				<input type="checkbox">
+				选择一
+			</label>
+			<label>
+				<input type="checkbox">
+				选择二
+			</label>
+			<label>
+				<input type="checkbox">
+				选择三
+			</label>
+		</div>
+	</div>
+</div>
+<!--无刷新切换页面-->
+<div class="btnList">
+	<h1>无刷新切换页面</h1>
+	<article class="useInfo">
+		<b>使用方法：</b>
+		<ol>
+			<li>组件层级结构（父子结构）必须按照例子的结构来，全选以及选择的位置可以随意。</li>
+			<li>最外层设置 <span>data-toggle="checkAll"</span></li>
+			<li>全选增加个name值<span>name="checkAll"</span></li>
+		</ol>
+	</article>
+	<div data-toggle="checkAll">
+		<label>
+			<input type="checkbox" name="checkAll">
+			全选
+		</label>
+		<div>
+			<label>
+				<input type="checkbox">
+				选择一
+			</label>
+			<label>
+				<input type="checkbox">
+				选择二
+			</label>
+			<label>
+				<input type="checkbox">
+				选择三
+			</label>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	seajs.use('mutually');
+</script>

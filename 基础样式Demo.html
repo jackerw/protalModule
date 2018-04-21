@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常用样式DEMO</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="mmyElement.css">
+	<style type="text/css">
+
+		.btnList{width:600px;margin:20px 0 0 20px;padding:0 20px 20px 20px;background:#efefef;overflow: hidden;font-size:14px;}
+	   h1{font-size:28px;margin-bottom:20px;}
+	   p{font-size:14px;}
+	</style>
+</head>
+<body>
+<!--按钮组件-->
+<div class="btnList">
+	<h1>按钮组件</h1>
+	<a href="javascript:;" class="mmyBtn">默认按钮</a>
+	<a href="javascript:;" class="mmyBtn btnSuccess">成功按钮</a>
+	<a href="javascript:;" class="mmyBtn btnWarn">警告按钮</a>
+	<a href="javascript:;" class="mmyBtn btnCancel">取消按钮</a>
+	<a href="javascript:;" class="mmyBtn btnNormal">普通按钮</a>
+</div>
+<!--表单组件-->
+<div class="btnList">
+	<h1>表单</h1>
+	<input type="text" class="mmyInp">
+	<select class="mmySelect mgT10">
+		<option>选项一</option>
+		<option>选项二</option>
+		<option>选项三</option>
+	</select>
+	<textarea class="mmyArea mgT10"></textarea>
+</div>
+<!--表格-->
+<div class="btnList">
+	<h1>表格</h1>
+	<p class="mgT20 mgB20">表格类型一(class="mmyTable")</p>
+	<table class="mmyTable tableHover">
+		<thead>
+			<tr>
+				<th>域名</th>
+				<th>带宽峰值</th>
+				<th>流量</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="mgT20 mgB20">表格类型二(class="mmyTableBd")</p>
+	<table class="mmyTableBd">
+		<thead>
+			<tr>
+				<th>域名</th>
+				<th>带宽峰值</th>
+				<th>流量</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="mgT20 mgB10">表格类型三(class="mmyTableTop"),控制台等系统常用的表格样式</p>
+	<b>注:如需要鼠标移动有相应样式需加上"tableHover"</b>
+	<table class="mmyTableTop tableHover">
+		<thead>
+			<tr>
+				<th>域名</th>
+				<th>带宽峰值</th>
+				<th>流量</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="mgT20 mgB10">表格类型四,奇偶样式显示<b>奇数样式显示加样式("tableOdd"),偶数样式显示加样式("tableEven")</b></p>
+	<table class="mmyTable tableOdd">
+		<thead>
+			<tr>
+				<th>域名</th>
+				<th>带宽峰值</th>
+				<th>流量</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+			<tr>
+				<td>test.ops.chinamaincloud.com</td>
+				<td>9.80Mbps</td>
+				<td>350.37MB</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
