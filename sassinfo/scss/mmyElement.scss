@@ -103,12 +103,13 @@ $tableTextColor:#959595;
 }
 .mmySelect{
 	width: 100px;
-	height: 30px;
-	line-height: 30px;
+	height: 35px;
+	line-height: 35px;
 	border:$borderColor;
+	vertical-align: middle;
 }
 /*开关样式*/
-.toggle {
+.mmyTg {
   position: relative;
   display: inline-block;
   pointer-events: auto;
@@ -333,6 +334,22 @@ table{
 	height:0;
 	clear:both;
 	visibility:hidden;
+}
+.bgBlack{
+	position:fixed;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+	background:#000;
+	z-index:999;
+}
+.mmyDots{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .mgT10{
 	margin-top:10px;
