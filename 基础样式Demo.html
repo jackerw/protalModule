@@ -6,9 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="css/mmyElement.css">
 	<style type="text/css">
 	   *{font-family:"Microsoft YaHei";}
-		.btnList{width:600px;margin:20px 0 0 20px;padding:0 20px 20px 20px;background:#efefef;overflow: hidden;font-size:14px;}
+		.btnList{width:700px;margin:20px 0 0 20px;padding:0 20px 20px 20px;background:#efefef;overflow: hidden;font-size:14px;}
 	   h1{font-size:28px;margin-bottom:20px;}
 	   p{font-size:14px;}
+	   .tips{color:#dc7d36;}
 	</style>
 </head>
 <body>
@@ -24,30 +25,37 @@
 </div>
 <div class="btnList">
 	<h1>开关样式</h1>
-	<label class="toggle">
+	<label class="mmyTg">
      <input type="checkbox" checked>
      <div class="track">
        <div class="handle"></div>
      </div>
    </label>
-   <label class="toggle toggleSuccess">
+   <label class="mmyTg toggleSuccess">
      <input type="checkbox" checked>
      <div class="track">
        <div class="handle"></div>
      </div>
    </label>
-   <label class="toggle toggleWarn">
+   <label class="mmyTg toggleWarn">
      <input type="checkbox" checked>
      <div class="track">
        <div class="handle"></div>
      </div>
    </label>
-   <label class="toggle toggleCancel">
+   <label class="mmyTg toggleCancel">
      <input type="checkbox" checked>
      <div class="track">
        <div class="handle"></div>
      </div>
    </label>
+</div>
+<!--面包屑-->
+<div class="btnList">
+	<h1>面包屑导航</h1>
+		<p class="mgT20 mgB20">导航一(class="mmyNav")<b>protal系统常用的导航</b></p>
+		<div class="mmyNav"></div>
+	</div>
 </div>
 <!--表单组件-->
 <div class="btnList">
@@ -168,6 +176,60 @@
 	<h1>protal常用A链接样式</h1>
 	<a href="#" class="mmyLink">链接一</a>
 	<a href="#" class="mmyLinkUl">链接一</a>
+</div>
+<!--常用样式-->
+<div class="btnList">
+	<h1>常用样式</h1>
+	<table class="mmyTable tableOdd" style="table-layout: auto;">
+		<thead>
+			<tr>
+				<th>功能</th>
+				<th>类名(class)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>左浮动</td>
+				<td class="tips">mmyLf</td>
+			</tr>
+			<tr>
+				<td>右浮动</td>
+				<td class="tips">mmyRt</td>
+			</tr>
+			<tr>
+				<td>设置块</td>
+				<td class="tips">mmyBlock</td>
+			</tr>
+			<tr>
+				<td>清除浮动</td>
+				<td class="tips">clearfix</td>
+			</tr>
+			<tr>
+				<td>全屏遮罩</td>
+				<td class="tips">bgBlack</td>
+			</tr>
+			<tr>
+				<td>省略号</td>
+				<td class="tips">mmyDots</td>
+			</tr>
+			<tr>
+				<td>常用宽度</td>
+				<td class="tips">
+					<span>"mmyW50"</span><span>"mmyW100"</span>
+					<span>"mmyW150"</span><span>"mmyW200"</span>
+				</td>
+			</tr>
+			<tr>
+				<td>常用margin距离</td>
+				<td class="tips">
+					<span>"mgT10"</span><span>"mgT20"</span>
+					<span>"mgB10"</span><span>"mgB20"</span>
+					<span>"mgL10"</span><span>"mgL20"</span>
+					<span>"mgR10"</span><span>"mgR20"</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 </body>
 </html>
