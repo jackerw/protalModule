@@ -108,6 +108,14 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .mmyDots { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
 
+.mmyW50 { width: 50px; }
+
+.mmyW100 { width: 100px; }
+
+.mmyW150 { width: 150px; }
+
+.mmyW200 { width: 200px; }
+
 .mgT10 { margin-top: 10px; }
 
 .mgT20 { margin-top: 20px; }
