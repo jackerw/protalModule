@@ -16,6 +16,7 @@ $tableTopColor:#d7ecff;
 $tableHoverC:#f4f7fc;
 $dfSizeColor:#333;
 $focusColor:#78bbee;
+$tableTextColor:#959595;
 
 /*按钮*/
 .mmyBtn{
@@ -188,7 +189,7 @@ table{
 		> tr{
 			>td{
 				border:1px solid #ddd;
-
+				color:$tableTextColor;
 			}
 			>td:first-child{
 				border-left:0;
