@@ -62,7 +62,15 @@ $tableTextColor:#959595;
 .btnNormal:hover{
 	background: #fff;
 }
-
+.btnNonebg{
+	color:$defaultColor;
+	border:1px solid $defaultColor;
+	background:0 none;
+}
+.btnNonebg:hover{
+	color:#fff;
+	background: $defaultColor;
+}
 /*表单基础样式*/
 .mmyInp{
 	width: 100%;
@@ -98,6 +106,84 @@ $tableTextColor:#959595;
 	height: 30px;
 	line-height: 30px;
 	border:$borderColor;
+}
+/*开关样式*/
+.toggle {
+  position: relative;
+  display: inline-block;
+  pointer-events: auto;
+  margin: -5px;
+  padding: 5px; 
+  input{
+  	display: none;
+  }
+  input:checked{
+  	+ .track{
+  		border-color: #78bbee;
+    	background-color: #78bbee;
+  	}
+  	+ .track .handle{
+  		-webkit-transform: translate3d(20px, 0, 0);
+  		transform: translate3d(20px, 0, 0);
+  		background-color: #fff;
+  	}
+  }
+  .track{
+	  -webkit-transition-timing-function: ease-in-out;
+	  transition-timing-function: ease-in-out;
+	  -webkit-transition-duration: 0.3s;
+	  transition-duration: 0.3s;
+	  -webkit-transition-property: background-color, border;
+	  transition-property: background-color, border;
+	  display: inline-block;
+	  box-sizing: border-box;
+	  width: 51px;
+	  height: 31px;
+	  border: solid 2px #e6e6e6;
+	  border-radius: 20px;
+	  background-color: #fff;
+	  content: ' ';
+	  cursor: pointer;
+	  pointer-events: none;
+  }
+  .handle{
+  	  -webkit-transition: background-color, transform 0.2s ease-out;
+	  transition:background-color, transform 0.2s ease-out;
+	  position: absolute;
+	  display: block;
+	  width: 27px;
+	  height: 27px;
+	  border-radius: 27px;
+	  background-color: #fff;
+	  top: 6px;
+	  left: 7px;
+	  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15);
+  }
+  .handle:before{
+  	position: absolute;
+    top: -4px;
+    left: -21.5px;
+    padding: 18.5px 34px;
+    content: " ";
+  }
+}
+.toggleSuccess {
+  	input:checked + .track {
+	  border-color: $successColor;
+	  background-color: $successColor; 
+	}
+}
+.toggleWarn {
+  	input:checked + .track {
+	  border-color: $warnColor;
+	  background-color: $warnColor; 
+	}
+}
+.toggleCancel {
+  	input:checked + .track {
+	  border-color: $cancelColor;
+	  background-color: $cancelColor; 
+	}
 }
 /*表格基础样式*/
 table{
