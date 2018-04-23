@@ -144,7 +144,6 @@ $tableTextColor:#959595;
 	  background-color: #fff;
 	  content: ' ';
 	  cursor: pointer;
-	  pointer-events: none;
   }
   .handle{
   	  -webkit-transition: background-color, transform 0.2s ease-out;
@@ -155,16 +154,10 @@ $tableTextColor:#959595;
 	  height: 27px;
 	  border-radius: 27px;
 	  background-color: #fff;
+	  cursor: pointer;
 	  top: 6px;
 	  left: 7px;
 	  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15);
-  }
-  .handle:before{
-  	position: absolute;
-    top: -4px;
-    left: -21.5px;
-    padding: 18.5px 34px;
-    content: " ";
   }
 }
 .toggleSuccess {
@@ -314,6 +307,15 @@ table{
 			background: $grayColor;
 		}
 	}
+}
+/*常用链接*/
+.mmyLink{
+	color:#78bbee;
+	text-decoration: none;
+}
+.mmyLinkUl{
+	color:#78bbee;
+	text-decoration:underline;
 }
 /*常用样式*/
 .mmyLf{
