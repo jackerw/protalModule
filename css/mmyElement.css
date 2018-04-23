@@ -33,20 +33,20 @@
 
 .mmyInp:focus, .mmyArea:focus { border-color: #78bbee; box-shadow: 0 0 4px #78bbee; -webkit-box-shadow: 0 0 4px #78bbee; }
 
-.mmySelect { width: 100px; height: 30px; line-height: 30px; border: 1px solid #e3e3e3; }
+.mmySelect { width: 100px; height: 35px; line-height: 35px; border: 1px solid #e3e3e3; vertical-align: middle; }
 
 /*开关样式*/
-.toggle { position: relative; display: inline-block; pointer-events: auto; margin: -5px; padding: 5px; }
+.mmyTg { position: relative; display: inline-block; pointer-events: auto; margin: -5px; padding: 5px; }
 
-.toggle input { display: none; }
+.mmyTg input { display: none; }
 
-.toggle input:checked + .track { border-color: #78bbee; background-color: #78bbee; }
+.mmyTg input:checked + .track { border-color: #78bbee; background-color: #78bbee; }
 
-.toggle input:checked + .track .handle { -webkit-transform: translate3d(20px, 0, 0); transform: translate3d(20px, 0, 0); background-color: #fff; }
+.mmyTg input:checked + .track .handle { -webkit-transform: translate3d(20px, 0, 0); transform: translate3d(20px, 0, 0); background-color: #fff; }
 
-.toggle .track { -webkit-transition-timing-function: ease-in-out; transition-timing-function: ease-in-out; -webkit-transition-duration: 0.3s; transition-duration: 0.3s; -webkit-transition-property: background-color, border; transition-property: background-color, border; display: inline-block; box-sizing: border-box; width: 51px; height: 31px; border: solid 2px #e6e6e6; border-radius: 20px; background-color: #fff; content: ' '; cursor: pointer; }
+.mmyTg .track { -webkit-transition-timing-function: ease-in-out; transition-timing-function: ease-in-out; -webkit-transition-duration: 0.3s; transition-duration: 0.3s; -webkit-transition-property: background-color, border; transition-property: background-color, border; display: inline-block; box-sizing: border-box; width: 51px; height: 31px; border: solid 2px #e6e6e6; border-radius: 20px; background-color: #fff; content: ' '; cursor: pointer; }
 
-.toggle .handle { -webkit-transition: background-color, transform 0.2s ease-out; transition: background-color, transform 0.2s ease-out; position: absolute; display: block; width: 27px; height: 27px; border-radius: 27px; background-color: #fff; cursor: pointer; top: 6px; left: 7px; box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15); }
+.mmyTg .handle { -webkit-transition: background-color, transform 0.2s ease-out; transition: background-color, transform 0.2s ease-out; position: absolute; display: block; width: 27px; height: 27px; border-radius: 27px; background-color: #fff; cursor: pointer; top: 6px; left: 7px; box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15); }
 
 .toggleSuccess input:checked + .track { border-color: #5eb95e; background-color: #5eb95e; }
 
@@ -103,6 +103,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 .mmyBlock { display: block; }
 
 .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+.bgBlack { position: fixed; left: 0; top: 0; right: 0; bottom: 0; opacity: 0.6; filter: alpha(opacity=60); background: #000; z-index: 999; }
+
+.mmyDots { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
 
 .mgT10 { margin-top: 10px; }
 
