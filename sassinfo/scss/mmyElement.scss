@@ -1,0 +1,271 @@
+/*几种常见颜色*/
+$defaultColor:#78bbee;
+$successColor:#5eb95e;
+$warnColor:#dd514c;
+$cancelColor:#a8b3bc;
+$normalColor:#fff;
+$grayColor:#f9f9f9;
+
+$defaultActive:#6dadde;
+$successActive:#58aa58;
+$cancelActive:#9aa4ac;
+$warnActive:#cc4c47;
+$borderColor:1px solid #e3e3e3;
+/*表格标题颜色*/
+$tableTopColor:#d7ecff;
+$tableHoverC:#f4f7fc;
+$dfSizeColor:#333;
+$focusColor:#78bbee;
+
+/*按钮*/
+.mmyBtn{
+	display: inline-block;
+	padding:6px 12px;
+	font-size:14px;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+	text-decoration: none;
+	outline: 0;
+	border:0 none;
+	border-radius: 4px;
+	background: $defaultColor;
+	transition: background-color .2s ease-out;
+}
+.mmyBtn:hover{
+	background:$defaultActive;
+}
+.btnSuccess{
+	background:$successColor;
+}
+.btnSuccess:hover{
+	background:$successActive;
+}
+.btnWarn{
+	background:$warnColor;
+}
+.btnWarn:hover{
+	background:$warnActive;
+}
+.btnCancel{
+	background:$cancelColor;
+}
+.btnCancel:hover{
+	background:$cancelActive;
+}
+.btnNormal{
+	color:#333;
+	border:$borderColor;
+	background: #fff;
+}
+.btnNormal:hover{
+	background: #fff;
+}
+
+/*表单基础样式*/
+.mmyInp{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-indent:10px;
+	border:$borderColor;
+	outline:none;
+	vertical-align: middle;
+    background-color: #fff;
+    transition: border-color .15s ease-in-out,
+    			box-shadow .15s ease-in-out,
+    			-webkit-box-shadow .15s ease-in-out;
+}
+.mmyArea{
+	width: 100%;
+	min-height: 100px;
+	border:$borderColor;
+	outline: none;
+	background-color: #fff;
+	transition: border-color .15s ease-in-out,
+    			box-shadow .15s ease-in-out,
+    			-webkit-box-shadow .15s ease-in-out;
+}
+.mmyInp:focus,
+.mmyArea:focus{
+	border-color:$focusColor;
+	box-shadow: 0 0 4px $focusColor;
+	-webkit-box-shadow: 0 0 4px $focusColor;
+}
+.mmySelect{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	border:$borderColor;
+}
+/*表格基础样式*/
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.tableBase{
+	table-layout: fixed;
+	width: 100%;
+	color:$dfSizeColor;
+	background: #fff;
+	>thead{
+		>tr{
+			>th{
+				padding:0 5px;
+				height: 38px;
+				text-align: center;
+			}
+		}
+	}
+	> tbody{
+		> tr{
+			>td{
+				padding:0 5px;
+				height: 38px;
+				text-align: center;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}
+.mmyTable{
+	@extend .tableBase;
+	> thead{
+		> tr{
+			>th{
+				border-bottom:2px solid #ddd;
+			}
+			
+		}
+	}
+	> tbody{
+		> tr{
+			>td{
+				border-bottom:1px solid #ddd;
+			}
+		}
+	}
+}
+.mmyTableBd{
+	@extend .tableBase;
+	> thead{
+		> tr{
+			>th{
+				border:1px solid #ddd;
+			}
+			
+		}
+	}
+	> tbody{
+		> tr{
+			>td{
+				border:1px solid #ddd;
+
+			}
+		}
+	}
+}
+.mmyTableTop{
+	@extend .tableBase;
+	> thead{
+		> tr{
+			>th{
+				border:0 none;
+				font-weight: normal;
+				background:$tableTopColor;
+			}
+			
+		}
+	}
+	> tbody{
+		> tr:first-child{
+			td{
+				border-top:0;
+			}
+		}
+		> tr{
+			>td{
+				border:1px solid #ddd;
+
+			}
+			>td:first-child{
+				border-left:0;
+			}
+			>td:last-child{
+				border-right:0;
+			}
+		}
+	}
+}
+.tableHover{
+	> tbody{
+		> tr{
+			transition: background-color .15s ease-in-out;
+		}
+		> tr:hover{
+			background:$tableHoverC;
+		}
+	}
+}
+/*奇偶样式显示*/
+.tableOdd{
+	> tbody{
+		> tr:nth-child(2n+1){
+			background: $grayColor;
+		}
+		> tr:nth-child(2n){
+			
+		}
+
+	}
+}
+.tableEven{
+	> tbody{
+		> tr:nth-child(2n){
+			background: $grayColor;
+		}
+	}
+}
+/*常用样式*/
+.mmyLf{
+	float: left;
+}
+.mmyRt{
+	float: right;
+}
+.mmyBlock{
+	display: block;
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.mgT10{
+	margin-top:10px;
+}
+.mgT20{
+	margin-top:20px;
+}
+.mgB10{
+	margin-bottom:10px;
+}
+.mgB20{
+	margin-bottom:20px;
+}
+.mgL10{
+	margin-left:10px;
+}
+.mgL20{
+	margin-left:20px;
+}
+.mgR10{
+	margin-right:10px;
+}
+.mgR20{
+	margin-right:20px;
+}
