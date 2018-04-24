@@ -8,11 +8,12 @@
 	<script type="text/javascript" src="js/seajs.config.js"></script>
 	<style type="text/css">
 		*{margin: 0;padding: 0;font-family:"Microsoft YaHei";list-style-type: none;}
-		.btnList{width:600px;margin:20px 0 0 20px;padding:20px;background:#efefef;overflow: hidden;font-size:14px;}
+		.btnList{width:600px;margin:20px 0 0 20px;padding:20px;background:#efefef;
+			font-size:14px;}
 	   h1{font-size:24px;margin-bottom:20px;}
 	   p{font-size:14px;}
 	   .useInfo{margin:15px 0;}
-	   .useInfo span{margin:0 10px;color:#dc7d36;}
+	   .useInfo ol span{margin:0 10px;color:#dc7d36;}
 	   .useInfo ol{padding-left:15px;}
 	   .useInfo ol li{margin-top:10px;}
 	</style>
@@ -54,13 +55,40 @@
 		</div>
 	</div>
 </div>
+<!--模拟下拉选择-->
+<div class="btnList">
+	<h1>模拟下拉选择</h1>
+	<article class="useInfo">
+		<b>使用方法：</b>
+		<ol>
+			<li>组件层级结构（父子结构）必须按照例子的结构来。</li>
+			<li>最外层设置 <span>data-toggle="nSelect"</span></li>
+		</ol>
+		<div class="mmySimSelect mgT20" data-toggle="nSelect">
+			<span>全部状态</span>
+			<ul class="sdata">
+				<li data-value="3">全部状态</li>
+				<li>已经停用</li>
+				<li>已经启用</li>
+			</ul>
+		</div>
+		<div class="mmySimSelect mgT20" data-toggle="nSelect">
+			<span>全部状态</span>
+			<ul class="sdata">
+				<li data-value="3">全部状态</li>
+				<li>已经停用</li>
+				<li>已经启用</li>
+			</ul>
+		</div>
+	</article>
+</div>
+
 <!--无刷新切换页面-->
 <div class="btnList">
 	<h1>无刷新切换页面</h1>
 	<article class="useInfo">
 		增加中。。。
 	</article>
-
 </div>
 </body>
 </html>
