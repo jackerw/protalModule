@@ -5,11 +5,12 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/mmyElement.css">
 	<style type="text/css">
-	   *{font-family:"Microsoft YaHei";}
-		.btnList{width:700px;margin:20px 0 0 20px;padding:0 20px 20px 20px;background:#efefef;overflow: hidden;font-size:14px;}
+	   *{margin: 0;padding: 0;font-family:"Microsoft YaHei";box-sizing: border-box;list-style-type: none;}
+		.btnList{width:700px;margin:20px 0 0 20px;padding:20px;background:#efefef;font-size:14px;}
 	   h1{font-size:28px;margin-bottom:20px;}
 	   p{font-size:14px;}
 	   .tips{color:#dc7d36;}
+	   h2{margin:20px 0;}
 	</style>
 </head>
 <body>
@@ -67,6 +68,15 @@
 		<option>选项三</option>
 	</select>
 	<textarea class="mmyArea mgT10"></textarea>
+	<h2>模拟select样式</h2>
+	<div class="mmySimSelect">
+		<span>全部状态</span>
+		<ul class="sdata">
+			<li>全部状态</li>
+			<li>已经停用</li>
+			<li>已经启用</li>
+		</ul>
+	</div>
 </div>
 <!--表格-->
 <div class="btnList">
@@ -199,6 +209,10 @@
 			<tr>
 				<td>设置块</td>
 				<td class="tips">mmyBlock</td>
+			</tr>
+			<tr>
+				<td>隐藏</td>
+				<td class="tips">mmyNone</td>
 			</tr>
 			<tr>
 				<td>清除浮动</td>

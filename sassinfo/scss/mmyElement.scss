@@ -318,12 +318,62 @@ table{
 	color:#78bbee;
 	text-decoration:underline;
 }
+/*模拟选择下拉*/
+.mmySimSelect{
+	position: relative;
+	display: inline-block;
+	min-width: 100px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	padding:0 30px 0 10px;
+	border: 1px solid #e7e7e7;
+	cursor: pointer;
+	background: #fff;
+	span:after{
+		position:absolute;
+		right:10px;
+		top:14px;
+		width: 13px;
+		height: 7px;
+		content: "";
+		background: url(../images/nav-icon.png) no-repeat -301px -13px;
+	}
+	.sdata{
+		display: none;
+		position:absolute;
+		left:-1px;
+		top:34px;
+		width: calc(100% + 2px);
+		text-align: center;
+		border-bottom: 1px solid #e7e7e7;
+		background: #fff;
+		z-index: 99;
+		li{
+			border-left: 1px solid #e7e7e7;
+			border-right: 1px solid #e7e7e7;
+		}
+		li:hover{
+			border-width: 0;
+			color:#fff;
+			background:$defaultColor;
+		}
+	}
+}
+.mmySimSelect:hover{
+	.sdata{
+		display: block;
+	}
+}
 /*常用样式*/
 .mmyLf{
 	float: left;
 }
 .mmyRt{
 	float: right;
+}
+.mmyNone{
+	display: none;
 }
 .mmyBlock{
 	display: block;
