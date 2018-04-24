@@ -322,17 +322,17 @@ table{
 .mmySimSelect{
 	position: relative;
 	display: inline-block;
-	min-width: 100px;
+	min-width: 80px;
 	height: 35px;
 	line-height: 35px;
 	text-align: center;
-	padding:0 30px 0 10px;
+	padding:0 25px 0 10px;
 	border: 1px solid #e7e7e7;
 	cursor: pointer;
 	background: #fff;
 	span:after{
 		position:absolute;
-		right:10px;
+		right:7px;
 		top:14px;
 		width: 13px;
 		height: 7px;
@@ -344,16 +344,19 @@ table{
 		position:absolute;
 		left:-1px;
 		top:34px;
+		max-height:380px;
 		width: calc(100% + 2px);
 		text-align: center;
 		border-bottom: 1px solid #e7e7e7;
-		background: #fff;
+		overflow: auto;
 		z-index: 99;
+		background: #fff;
 		li{
+			padding-right:15px;
 			border-left: 1px solid #e7e7e7;
 			border-right: 1px solid #e7e7e7;
 		}
-		li:hover{
+		li:hover,li.selectActive{
 			border-width: 0;
 			color:#fff;
 			background:$defaultColor;
