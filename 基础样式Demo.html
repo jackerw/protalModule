@@ -4,6 +4,8 @@
 	<title>常用样式DEMO</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/mmyElement.css">
+	<script type="text/javascript" src="js/sea.js"></script>
+	<script type="text/javascript" src="js/seajs.config.js"></script>
 	<style type="text/css">
 	   *{margin: 0;padding: 0;font-family:"Microsoft YaHei";box-sizing: border-box;list-style-type: none;}
 		.btnList{width:700px;margin:20px 0 0 20px;padding:20px;background:#efefef;font-size:14px;}
@@ -11,49 +13,66 @@
 	   p{font-size:14px;}
 	   .tips{color:#dc7d36;}
 	   h2{margin:20px 0;}
+	   .menuLeft{position: fixed;left:0;top:0;width: 120px;height: 100%;border-right: 1px solid #efefef;overflow: auto;}
+	   .menuLeft a{display: block;margin-top:15px;padding-left:20px;color: #777;text-decoration: none;font-size:14px;}
+	   .menuLeft a.active{color:#78bbee;}
+	   .menuList{padding-top:20px;}
+	   .menuRight{margin-left:130px;}
 	</style>
 </head>
 <body>
-<!--按钮组件-->
-<div class="btnList">
-	<h1>按钮组件</h1>
-	<a href="javascript:;" class="mmyBtn">默认按钮</a>
-	<a href="javascript:;" class="mmyBtn btnSuccess">成功按钮</a>
-	<a href="javascript:;" class="mmyBtn btnWarn">警告按钮</a>
-	<a href="javascript:;" class="mmyBtn btnCancel">取消按钮</a>
-	<a href="javascript:;" class="mmyBtn btnNormal">普通按钮</a>
-	<a href="javascript:;" class="mmyBtn btnNonebg">无背景按钮</a>
+<div class="menuLeft">
+	<div class="menuList">
+		<a href="#mmyBtn" class="active">按钮组件</a>
+		<a href="#mmyTg">开关样式</a>
+		<a href="#mmyNav">导航</a>
+		<a href="#mmyInp">表单组件</a>
+		<a href="#mmyTable">表格</a>
+		<a href="#mmyLink">A链接</a>
+		<a href="#mmyUse">常用样式</a>
+	</div>
 </div>
-<div class="btnList">
-	<h1>开关样式</h1>
-	<label class="mmyTg">
-     <input type="checkbox" checked>
-     <div class="track">
-       <div class="handle"></div>
-     </div>
-   </label>
-   <label class="mmyTg toggleSuccess">
-     <input type="checkbox" checked>
-     <div class="track">
-       <div class="handle"></div>
-     </div>
-   </label>
-   <label class="mmyTg toggleWarn">
-     <input type="checkbox" checked>
-     <div class="track">
-       <div class="handle"></div>
-     </div>
-   </label>
-   <label class="mmyTg toggleCancel">
-     <input type="checkbox" checked>
-     <div class="track">
-       <div class="handle"></div>
-     </div>
-   </label>
-</div>
-<!--面包屑-->
-<div class="btnList">
-	<h1>面包屑导航</h1>
+<div class="menuRight">
+	<!--按钮组件-->
+	<div class="btnList" id="mmyBtn">
+		<h1>按钮组件</h1>
+		<a href="javascript:;" class="mmyBtn">默认按钮</a>
+		<a href="javascript:;" class="mmyBtn btnSuccess">成功按钮</a>
+		<a href="javascript:;" class="mmyBtn btnWarn">警告按钮</a>
+		<a href="javascript:;" class="mmyBtn btnCancel">取消按钮</a>
+		<a href="javascript:;" class="mmyBtn btnNormal">普通按钮</a>
+		<a href="javascript:;" class="mmyBtn btnNonebg">无背景按钮</a>
+	</div>
+	<div class="btnList" id="mmyTg">
+		<h1>开关样式</h1>
+		<label class="mmyTg">
+	     <input type="checkbox" checked>
+	     <div class="track">
+	       <div class="handle"></div>
+	     </div>
+	   </label>
+	   <label class="mmyTg toggleSuccess">
+	     <input type="checkbox" checked>
+	     <div class="track">
+	       <div class="handle"></div>
+	     </div>
+	   </label>
+	   <label class="mmyTg toggleWarn">
+	     <input type="checkbox" checked>
+	     <div class="track">
+	       <div class="handle"></div>
+	     </div>
+	   </label>
+	   <label class="mmyTg toggleCancel">
+	     <input type="checkbox" checked>
+	     <div class="track">
+	       <div class="handle"></div>
+	     </div>
+	   </label>
+	</div>
+	<!--面包屑-->
+	<div class="btnList" id="mmyNav">
+		<h1>面包屑导航</h1>
 		<p class="mgT20 mgB20">导航一(class="mmyNav")<b>protal系统常用的导航</b></p>
 		<div class="mmyNav">
 			<a href="#">CDN服务</a>
@@ -63,193 +82,194 @@
 			<span>带宽控制列表</span>
 		</div>
 	</div>
-</div>
-<!--表单组件-->
-<div class="btnList">
-	<h1>表单</h1>
-	<input type="text" class="mmyInp">
-	<select class="mmySelect mgT10">
-		<option>选项一</option>
-		<option>选项二</option>
-		<option>选项三</option>
-	</select>
-	<textarea class="mmyArea mgT10"></textarea>
-	<h2>模拟select样式</h2>
-	<div class="mmySimSelect">
-		<span>全部状态</span>
-		<ul class="sdata">
-			<li>全部状态</li>
-			<li>已经停用</li>
-			<li>已经启用</li>
-		</ul>
+	<!--表单组件-->
+	<div class="btnList" id="mmyInp">
+		<h1>表单</h1>
+		<input type="text" class="mmyInp">
+		<select class="mmySelect mgT10">
+			<option>选项一</option>
+			<option>选项二</option>
+			<option>选项三</option>
+		</select>
+		<textarea class="mmyArea mgT10"></textarea>
+		<h2>模拟select样式</h2>
+		<div class="mmySimSelect">
+			<span>全部状态</span>
+			<ul class="sdata">
+				<li>全部状态</li>
+				<li>已经停用</li>
+				<li>已经启用</li>
+			</ul>
+		</div>
+	</div>
+	<!--表格-->
+	<div class="btnList" id="mmyTable">
+		<h1>表格</h1>
+		<p class="mgT20 mgB20">表格类型一(class="mmyTable")</p>
+		<table class="mmyTable tableHover">
+			<thead>
+				<tr>
+					<th>域名</th>
+					<th>带宽峰值</th>
+					<th>流量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="mgT20 mgB20">表格类型二(class="mmyTableBd")</p>
+		<table class="mmyTableBd">
+			<thead>
+				<tr>
+					<th>域名</th>
+					<th>带宽峰值</th>
+					<th>流量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="mgT20 mgB10">表格类型三(class="mmyTableTop"),控制台等系统常用的表格样式</p>
+		<b>注:如需要鼠标移动有相应样式需加上"tableHover"</b>
+		<table class="mmyTableTop tableHover">
+			<thead>
+				<tr>
+					<th>域名</th>
+					<th>带宽峰值</th>
+					<th>流量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="mgT20 mgB10">表格类型四,奇偶样式显示<b>奇数样式显示加样式("tableOdd"),偶数样式显示加样式("tableEven")</b></p>
+		<table class="mmyTable tableOdd">
+			<thead>
+				<tr>
+					<th>域名</th>
+					<th>带宽峰值</th>
+					<th>流量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+				<tr>
+					<td>test.ops.chinamaincloud.com</td>
+					<td>9.80Mbps</td>
+					<td>350.37MB</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!--protal系统常用A链接-->
+	<div class="btnList" id="mmyLink">
+		<h1>protal常用A链接样式</h1>
+		<a href="#" class="mmyLink">链接一</a>
+		<a href="#" class="mmyLinkUl">链接一</a>
+	</div>
+	<!--常用样式-->
+	<div class="btnList" id="mmyUse">
+		<h1>常用样式</h1>
+		<table class="mmyTable tableOdd" style="table-layout: auto;">
+			<thead>
+				<tr>
+					<th>功能</th>
+					<th>类名(class)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>左浮动</td>
+					<td class="tips">mmyLf</td>
+				</tr>
+				<tr>
+					<td>右浮动</td>
+					<td class="tips">mmyRt</td>
+				</tr>
+				<tr>
+					<td>设置块</td>
+					<td class="tips">mmyBlock</td>
+				</tr>
+				<tr>
+					<td>隐藏</td>
+					<td class="tips">mmyNone</td>
+				</tr>
+				<tr>
+					<td>清除浮动</td>
+					<td class="tips">clearfix</td>
+				</tr>
+				<tr>
+					<td>全屏遮罩</td>
+					<td class="tips">bgBlack</td>
+				</tr>
+				<tr>
+					<td>省略号</td>
+					<td class="tips">mmyDots</td>
+				</tr>
+				<tr>
+					<td>常用宽度</td>
+					<td class="tips">
+						<span>"mmyW50"</span><span>"mmyW100"</span>
+						<span>"mmyW150"</span><span>"mmyW200"</span>
+					</td>
+				</tr>
+				<tr>
+					<td>常用margin距离</td>
+					<td class="tips">
+						<span>"mgT10"</span><span>"mgT20"</span>
+						<span>"mgB10"</span><span>"mgB20"</span>
+						<span>"mgL10"</span><span>"mgL20"</span>
+						<span>"mgR10"</span><span>"mgR20"</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
-<!--表格-->
-<div class="btnList">
-	<h1>表格</h1>
-	<p class="mgT20 mgB20">表格类型一(class="mmyTable")</p>
-	<table class="mmyTable tableHover">
-		<thead>
-			<tr>
-				<th>域名</th>
-				<th>带宽峰值</th>
-				<th>流量</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-		</tbody>
-	</table>
-	<p class="mgT20 mgB20">表格类型二(class="mmyTableBd")</p>
-	<table class="mmyTableBd">
-		<thead>
-			<tr>
-				<th>域名</th>
-				<th>带宽峰值</th>
-				<th>流量</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-		</tbody>
-	</table>
-	<p class="mgT20 mgB10">表格类型三(class="mmyTableTop"),控制台等系统常用的表格样式</p>
-	<b>注:如需要鼠标移动有相应样式需加上"tableHover"</b>
-	<table class="mmyTableTop tableHover">
-		<thead>
-			<tr>
-				<th>域名</th>
-				<th>带宽峰值</th>
-				<th>流量</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-		</tbody>
-	</table>
-	<p class="mgT20 mgB10">表格类型四,奇偶样式显示<b>奇数样式显示加样式("tableOdd"),偶数样式显示加样式("tableEven")</b></p>
-	<table class="mmyTable tableOdd">
-		<thead>
-			<tr>
-				<th>域名</th>
-				<th>带宽峰值</th>
-				<th>流量</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-			<tr>
-				<td>test.ops.chinamaincloud.com</td>
-				<td>9.80Mbps</td>
-				<td>350.37MB</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-<!--protal系统常用A链接-->
-<div class="btnList">
-	<h1>protal常用A链接样式</h1>
-	<a href="#" class="mmyLink">链接一</a>
-	<a href="#" class="mmyLinkUl">链接一</a>
-</div>
-<!--常用样式-->
-<div class="btnList">
-	<h1>常用样式</h1>
-	<table class="mmyTable tableOdd" style="table-layout: auto;">
-		<thead>
-			<tr>
-				<th>功能</th>
-				<th>类名(class)</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>左浮动</td>
-				<td class="tips">mmyLf</td>
-			</tr>
-			<tr>
-				<td>右浮动</td>
-				<td class="tips">mmyRt</td>
-			</tr>
-			<tr>
-				<td>设置块</td>
-				<td class="tips">mmyBlock</td>
-			</tr>
-			<tr>
-				<td>隐藏</td>
-				<td class="tips">mmyNone</td>
-			</tr>
-			<tr>
-				<td>清除浮动</td>
-				<td class="tips">clearfix</td>
-			</tr>
-			<tr>
-				<td>全屏遮罩</td>
-				<td class="tips">bgBlack</td>
-			</tr>
-			<tr>
-				<td>省略号</td>
-				<td class="tips">mmyDots</td>
-			</tr>
-			<tr>
-				<td>常用宽度</td>
-				<td class="tips">
-					<span>"mmyW50"</span><span>"mmyW100"</span>
-					<span>"mmyW150"</span><span>"mmyW200"</span>
-				</td>
-			</tr>
-			<tr>
-				<td>常用margin距离</td>
-				<td class="tips">
-					<span>"mgT10"</span><span>"mgT20"</span>
-					<span>"mgB10"</span><span>"mgB20"</span>
-					<span>"mgL10"</span><span>"mgL20"</span>
-					<span>"mgR10"</span><span>"mgR20"</span>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+
 </body>
 </html>
