@@ -71,6 +71,36 @@ $tableTextColor:#959595;
 	color:#fff;
 	background: $defaultColor;
 }
+/*导航样式*/
+.mmyNav{
+	height: 60px;
+	padding-left:20px;
+	line-height: 60px;
+	font-size:16px;
+	font-weight: bold;
+	color:#828282;
+	border:$borderColor;
+	background: #fff;
+	i{
+		font-style: normal;
+		margin:0 4px;
+	}
+	a{
+		color:#828282;
+		
+		text-decoration: none;
+	}
+}
+.mmyNav:before{
+	display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin-right:5px;
+    vertical-align: middle;
+	content: "";
+	background: url(../images/usercenter-icon.png) no-repeat -190px -4px;
+	
+}
 /*表单基础样式*/
 .mmyInp{
 	width: 100%;
@@ -96,17 +126,23 @@ $tableTextColor:#959595;
     			-webkit-box-shadow .15s ease-in-out;
 }
 .mmyInp:focus,
-.mmyArea:focus{
+.mmyArea:focus,
+.mmySelect:focus{
 	border-color:$focusColor;
 	box-shadow: 0 0 4px $focusColor;
 	-webkit-box-shadow: 0 0 4px $focusColor;
 }
 .mmySelect{
-	width: 100px;
+	width: 90px;
 	height: 35px;
+	padding-left:10px;
 	line-height: 35px;
 	border:$borderColor;
 	vertical-align: middle;
+	outline: none;
+	transition: border-color .15s ease-in-out,
+    			box-shadow .15s ease-in-out,
+    			-webkit-box-shadow .15s ease-in-out;
 }
 /*开关样式*/
 .mmyTg {
