@@ -72,6 +72,50 @@ define(function(require, exports, module) {
     
 })(window.jQuery || window.Zepto);
 
+/*
+ * 模拟下拉选择
+ * */
+ (function($){
+    function Nselect(element){
+        this.element=element;
+        this.svalue=element.find("span");
+    }
+    Nselect.prototype.handle=function(){
+        var that=this;
+        this.element.on("click","li",function(){
+            that.svalue.text($(this).text())
+            $(this).parent().hide()
+            $(this).addClass("selectActive").siblings().removeClass("selectActive")
+        })
+        this.element.hover(function(){
+            $(this).find("ul").show();
+        },function(){
+            $(this).find("ul").hide();
+        })
+    }
+
+    /*插件定义*/
+    function Plugin() {
+        return this.each(function () {
+            var $this=$(this);
+            var data=$this.data('check');
+            if(!data){
+                $this.data('check', (data=new Nselect($this)))
+            }
+            data.handle();
+        })
+    }
+
+    /*调用*/
+    $.fn.Nselect= Plugin;
+   
+    //HTML配置调用
+    var $sim=$(document).find("[data-toggle='nSelect']");
+    
+    $sim.Nselect();
+
+})(window.jQuery || window.Zepto);
+
 
 /*
  * 无刷新切换页面
