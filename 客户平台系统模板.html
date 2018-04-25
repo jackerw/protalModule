@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>客户平台系统模板</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/mmyElement.css">
+	<style type="text/css">
+	   *{margin: 0;padding: 0;font-family:"Microsoft YaHei";box-sizing: border-box;list-style-type: none;}
+		.btnList{width:600px;margin:20px 0 0 20px;padding:0 20px 20px 20px;background:#efefef;overflow: hidden;font-size:14px;}
+	   h1{font-size:28px;margin-bottom:20px;}
+	   p{font-size:14px;}
+	   body{background: #f3f7fd;min-height: 1200px;}
+	   .mainContent{max-width: 1300px;}
+	   /*客户信息*/
+	   .opHead{padding:10px;}
+	   .opSearch .nameText{display:inline-block;}
+	   /*添加客户*/
+	   .w220{width:220px;}
+	   .addTable tr td{padding:5px 0;}
+	   .addTable tr td:first-child{text-align: right;}
+	   .addTable tr td:last-child{text-align: left;}
+	   .addTable .mmyBtn{min-width: 75px;}
+	   /*报障信息*/
+       .faultTit{padding:15px;}
+       .faultTit .mmySimSelect{margin-right:10px;}
+       .faultAdd textarea{width: 300px;}
+	</style>
+</head>
+<body>
+<div class="mainContent">
+    <div class="mainContentInner">
+    	<!--客户信息-->
+    	<div class="opHead">
+    		<a href="javascript:;" class="mmyBtn">添加客户</a>
+    		<div class="opSearch mmyRt">
+    			<label class="nameText mgR10 mmyW200">
+	    			<input type="text" class="mmyInp" placeholder="输入公司名称或者账户名称">
+    			</label>
+    			<a href="javascript:;" class="mmyBtn">查询</a>
+    		</div>
+    	</div>
+    	<!--客户信息列表-->
+    	<div class="opClientList mgT20">
+    		<table class="mmyTableTop tableHover">
+    			<thead>
+    				<tr>
+    					<th>序号</th>
+    					<th>公司名称</th>
+    					<th>账户名称</th>
+    					<th>服务区域</th>
+    					<th>服务状态</th>
+    					<th>所属行业</th>
+    					<th>业务规模</th>
+    					<th>操作</th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<td>1</td>
+    					<td>蛮蛮天下</td>
+    					<td>chinacloud</td>
+    					<td>华南</td>
+    					<td>已经启用</td>
+    					<td>互联网</td>
+    					<td>非上市</td>
+    					<td><a href="#" class="mmyLink">编辑</a></td>
+    				</tr>
+    				<tr>
+    					<td>2</td>
+    					<td>蛮蛮天下</td>
+    					<td>chinacloud</td>
+    					<td>华南</td>
+    					<td>已经启用</td>
+    					<td>互联网</td>
+    					<td>非上市</td>
+    					<td><a href="#" class="mmyLink">编辑</a></td>
+    				</tr>
+    			</tbody>
+    		</table>
+    	</div>
+
+    	<!--客户添加-->
+    	<div class="clientAdd mgT20">
+    		<div class="mmyNav">
+				<a href="#">客户信息</a>
+				<i>&gt;</i>
+				<span>添加客户</span>
+			</div>
+    		<table class="addTable mgT20">
+    			<tbody>
+    				<tr>
+    					<td>公司名称 ：</td>
+    					<td><input type="text" class="mmyInp w220"></td>
+    				</tr>
+    				<tr>
+    					<td>账户名称 ：</td>
+    					<td><input type="text" class="mmyInp w220"></td>
+    				</tr>
+    				<tr>
+    					<td>行业属性 ：</td>
+    					<td>
+    						<select class="mmySelect"><option>1</option></select>
+    						<select class="mmySelect"><option>2</option></select>
+    						<select class="mmySelect"><option>3</option></select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>公司成熟度 ：</td>
+    					<td>
+    						<select class="mmySelect"><option>初创公司</option></select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>行业地位及口碑 ：</td>
+    					<td>
+    						<input type="text" class="mmyInp w220">
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>现金流是否安全 ：</td>
+    					<td>
+    						<label>
+    							<input type="radio" name="cash">
+    							是
+    						</label>
+    						<label class="mgR20 mgL20">
+    							<input type="radio" name="cash">
+    							否
+    						</label>
+    						<label>
+    							<input type="radio" name="cash">
+    							不确定
+    						</label>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>回款周期 ：</td>
+    					<td>
+    						<input type="text" class="mmyInp w220">
+    						<select class="mmySelect mmyW50">
+    							<option>年</option>
+    						</select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>业务规模 ：</td>
+    					<td>
+    						<input type="text" class="mmyInp w220">
+    						<select class="mmySelect mmyW50">
+    							<option>年</option>
+    						</select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>服务区域 ：</td>
+    					<td>
+    						<label class="mgR20">
+    							<input type="checkbox">
+    							华南
+    						</label>
+    						<label>
+    							<input type="checkbox">
+    							华北
+    						</label>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>蛮蛮预计接入规模 ：</td>
+    					<td>
+    						<input type="text" class="mmyInp w220">
+    						<select class="mmySelect mmyW50">
+    							<option>M</option>
+    						</select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>预计未来购买潜力 ：</td>
+    					<td>
+    						<input type="text" class="mmyInp w220">
+    						<select class="mmySelect mmyW50">
+    							<option>M</option>
+    						</select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>合作模式 ：</td>
+    					<td>
+    						<select class="mmySelect">
+    							<option>常规模式</option>
+    						</select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>商务时间 ：</td>
+    					<td>
+    						<select class="mmySelect">
+    							<option>常规模式</option>
+    						</select>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td></td>
+    					<td>
+    						<a href="javascript:;" class="mmyBtn mgR20">确定</a>
+    						<a href="javascript:;" class="mmyBtn btnCancel">取消</a>
+    					</td>
+    				</tr>
+    			</tbody>
+    		</table>
+    	</div>
+
+    	<!--故障信息-->
+    	<div class="clientFault">
+    		<div class="faultTit">
+    			<a href="javascript:;" class="mmyBtn faultBtn">添加报障</a>
+	    		<div class="opSearch mmyRt">
+	    			<div class="mmySimSelect">
+						<span>公司名称</span>
+						<ul class="sdata">
+							<li>蛮蛮云</li>
+							<li>蛮蛮云</li>
+						</ul>
+					</div>
+					<div class="mmySimSelect">
+						<span>处理状态</span>
+						<ul class="sdata">
+							<li>全部状态</li>
+							<li>已经处理</li>
+							<li>未处理</li>
+						</ul>
+					</div>
+	    			<a href="javascript:;" class="mmyBtn">查询</a>
+	    		</div>
+    		</div>
+            <table class="mmyTableTop tableHover">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>公司名称</th>
+                        <th>投诉类型</th>
+                        <th>状态</th>
+                        <th>故障发生时间</th>
+                        <th>故障解决时间</th>
+                        <th>处理人</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>蛮蛮天下</td>
+                        <td>499状态比较多</td>
+                        <td>未处理</td>
+                        <td>2018-03-10</td>
+                        <td>--</td>
+                        <td>蛮蛮云</td>
+                        <td><a href="#" class="mmyLink">编辑</a></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>蛮蛮天下</td>
+                        <td>499状态比较多</td>
+                        <td>未处理</td>
+                        <td>2018-03-10</td>
+                        <td>--</td>
+                        <td>蛮蛮云</td>
+                        <td><a href="#" class="mmyLink">编辑</a></td>
+                    </tr>
+                </tbody>
+            </table>
+    	</div>
+        <!--添加报障-->
+        <div class="faultAdd mgT20">
+            <div class="mmyNav">
+                <a href="#">客户报障信息</a>
+                <i>&gt;</i>
+                <span>添加报障</span>
+            </div>
+            <table class="addTable mgT20">
+                <tbody>
+                    <tr>
+                        <td>公司名称 ：</td>
+                        <td><select class="mmySelect w220"><option>1</option></select></td>
+                    </tr>
+                    <tr>
+                        <td>故障标题 ：</td>
+                        <td><input type="text" class="mmyInp w220"></td>
+                    </tr>
+                    <tr>
+                        <td>故障类型 ：</td>
+                        <td>
+                            <select class="mmySelect w220"><option>1</option></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>访问故障url ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="mustIcon"></i>故障来源IP ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="mustIcon"></i>故障来源省份 ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="mustIcon"></i>运营商 ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>localDNS ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="mustIcon"></i>访问时间 ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="mustIcon"></i>故障描述 ：</td>
+                        <td>
+                            <textarea class="mmyArea"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="mustIcon"></i>故障影响范围 ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="mustIcon"></i>联系电话 ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>运维邮箱 ：</td>
+                        <td>
+                            <input type="text" class="mmyInp w220">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>备注 :</td>
+                        <td>
+                            <textarea class="mmyArea"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <a href="javascript:;" class="mmyBtn mgR20">确定</a>
+                            <a href="javascript:;" class="mmyBtn btnCancel">取消</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
