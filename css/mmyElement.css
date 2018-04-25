@@ -132,6 +132,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .mmyDots { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
 
+.mustIcon:before { display: inline-block; margin-right: 4px; color: red; font-style: normal; content: "*"; }
+
 .mmyW50 { width: 50px; }
 
 .mmyW100 { width: 100px; }
