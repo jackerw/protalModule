@@ -21,7 +21,7 @@ $tableTextColor:#959595;
 /*按钮*/
 .mmyBtn{
 	display: inline-block;
-	padding:6px 12px;
+	padding:8px 12px;
 	font-size:14px;
 	color: #fff;
 	text-align: center;
@@ -98,14 +98,14 @@ $tableTextColor:#959595;
     margin-right:5px;
     vertical-align: middle;
 	content: "";
-	background: url(../images/usercenter-icon.png) no-repeat -190px -4px;
+	background: url(../../images/usercenter-icon.png) no-repeat -190px -4px;
 	
 }
 /*表单基础样式*/
 .mmyInp{
 	width: 100%;
-	height: 30px;
-	line-height: 30px;
+	height: 35px;
+	line-height: 35px;
 	text-indent:10px;
 	border:$borderColor;
 	outline:none;
@@ -360,9 +360,10 @@ table{
 	display: inline-block;
 	min-width: 80px;
 	height: 35px;
+	padding:0 30px 0 20px;
 	line-height: 35px;
 	text-align: center;
-	padding:0 25px 0 10px;
+	color:#666;
 	border: 1px solid #e7e7e7;
 	cursor: pointer;
 	background: #fff;
@@ -373,7 +374,7 @@ table{
 		width: 13px;
 		height: 7px;
 		content: "";
-		background: url(../images/nav-icon.png) no-repeat -301px -13px;
+		background: url(../../images/nav-icon.png) no-repeat -301px -13px;
 	}
 	.sdata{
 		display: none;
@@ -386,11 +387,15 @@ table{
 		border-bottom: 1px solid #e7e7e7;
 		overflow: auto;
 		z-index: 99;
+		vertical-align: middle;
 		background: #fff;
 		li{
-			padding-right:15px;
+			padding:0 7px;
 			border-left: 1px solid #e7e7e7;
 			border-right: 1px solid #e7e7e7;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
 		}
 		li:hover,li.selectActive{
 			border-width: 0;
@@ -404,6 +409,69 @@ table{
 		display: block;
 	}
 }
+/*分页样式*/
+.paginationWrap{
+	overflow:hidden;
+}
+.paginationWrap p.total{
+    display: inline-block;
+    margin-top: 40px;
+    line-height: 30px;
+    font-size: 14px;
+    float: right;
+    height: 30px;
+    margin-right: 20px;
+    color: #333;
+}
+.paginationWrap p.total span{
+	color:#89C6F1;
+}
+.pagination{
+	margin-top: 40px;
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+}
+.pagination:after{
+	content: '.';
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.pagination a {
+    text-decoration: none;
+	border: 1px solid #e7e7e7;
+	color: #333;
+}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 0 6px;
+    margin-right: 10px;
+    /* margin-bottom: 5px; */
+    height: 30px;
+    min-width: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.pagination .current {
+    background: #89C6F1;
+    color: #fff;
+	border: 1px solid #e7e7e7;
+}
+
+.pagination .prev, .pagination .next{
+	padding:0 16px;
+}
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#E7E7E7;
+	background:#fff;
+}
+
 /*常用样式*/
 .mmyLf{
 	float: left;
