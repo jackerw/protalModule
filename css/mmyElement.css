@@ -2,7 +2,7 @@
 /*几种常见颜色*/
 /*表格标题颜色*/
 /*按钮*/
-.mmyBtn { display: inline-block; padding: 6px 12px; font-size: 14px; color: #fff; text-align: center; line-height: 20px; text-decoration: none; outline: 0; border: 0 none; border-radius: 4px; background: #78bbee; transition: background-color .2s ease-out; }
+.mmyBtn { display: inline-block; padding: 8px 12px; font-size: 14px; color: #fff; text-align: center; line-height: 20px; text-decoration: none; outline: 0; border: 0 none; border-radius: 4px; background: #78bbee; transition: background-color .2s ease-out; }
 
 .mmyBtn:hover { background: #6dadde; }
 
@@ -33,10 +33,10 @@
 
 .mmyNav a { color: #828282; text-decoration: none; }
 
-.mmyNav:before { display: inline-block; width: 19px; height: 19px; margin-right: 5px; vertical-align: middle; content: ""; background: url(../images/usercenter-icon.png) no-repeat -190px -4px; }
+.mmyNav:before { display: inline-block; width: 19px; height: 19px; margin-right: 5px; vertical-align: middle; content: ""; background: url(../../images/usercenter-icon.png) no-repeat -190px -4px; }
 
 /*表单基础样式*/
-.mmyInp { width: 100%; height: 30px; line-height: 30px; text-indent: 10px; border: 1px solid #e3e3e3; outline: none; vertical-align: middle; background-color: #fff; transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out; }
+.mmyInp { width: 100%; height: 35px; line-height: 35px; text-indent: 10px; border: 1px solid #e3e3e3; outline: none; vertical-align: middle; background-color: #fff; transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out; }
 
 .mmyArea { width: 100%; min-height: 100px; border: 1px solid #e3e3e3; outline: none; background-color: #fff; transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out; }
 
@@ -105,17 +105,38 @@ table { border-collapse: collapse; border-spacing: 0; }
 .mmyLinkUl { color: #78bbee; text-decoration: underline; }
 
 /*模拟选择下拉*/
-.mmySimSelect { position: relative; display: inline-block; min-width: 80px; height: 35px; line-height: 35px; text-align: center; padding: 0 25px 0 10px; border: 1px solid #e7e7e7; cursor: pointer; background: #fff; }
+.mmySimSelect { position: relative; display: inline-block; min-width: 80px; height: 35px; padding: 0 30px 0 20px; line-height: 35px; text-align: center; color: #666; border: 1px solid #e7e7e7; cursor: pointer; background: #fff; }
 
-.mmySimSelect span:after { position: absolute; right: 7px; top: 14px; width: 13px; height: 7px; content: ""; background: url(../images/nav-icon.png) no-repeat -301px -13px; }
+.mmySimSelect span:after { position: absolute; right: 7px; top: 14px; width: 13px; height: 7px; content: ""; background: url(../../images/nav-icon.png) no-repeat -301px -13px; }
 
-.mmySimSelect .sdata { display: none; position: absolute; left: -1px; top: 34px; max-height: 380px; width: calc(100% + 2px); text-align: center; border-bottom: 1px solid #e7e7e7; overflow: auto; z-index: 99; background: #fff; }
+.mmySimSelect .sdata { display: none; position: absolute; left: -1px; top: 34px; max-height: 380px; width: calc(100% + 2px); text-align: center; border-bottom: 1px solid #e7e7e7; overflow: auto; z-index: 99; vertical-align: middle; background: #fff; }
 
-.mmySimSelect .sdata li { padding-right: 15px; border-left: 1px solid #e7e7e7; border-right: 1px solid #e7e7e7; }
+.mmySimSelect .sdata li { padding: 0 7px; border-left: 1px solid #e7e7e7; border-right: 1px solid #e7e7e7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .mmySimSelect .sdata li:hover, .mmySimSelect .sdata li.selectActive { border-width: 0; color: #fff; background: #78bbee; }
 
 .mmySimSelect:hover .sdata { display: block; }
+
+/*分页样式*/
+.paginationWrap { overflow: hidden; }
+
+.paginationWrap p.total { display: inline-block; margin-top: 40px; line-height: 30px; font-size: 14px; float: right; height: 30px; margin-right: 20px; color: #333; }
+
+.paginationWrap p.total span { color: #89C6F1; }
+
+.pagination { margin-top: 40px; display: inline-block; float: right; margin-right: 20px; }
+
+.pagination:after { content: '.'; display: block; visibility: hidden; height: 0; clear: both; }
+
+.pagination a { text-decoration: none; border: 1px solid #e7e7e7; color: #333; }
+
+.pagination a, .pagination span { display: inline-block; padding: 0 6px; margin-right: 10px; /* margin-bottom: 5px; */ height: 30px; min-width: 30px; line-height: 30px; text-align: center; font-size: 14px; }
+
+.pagination .current { background: #89C6F1; color: #fff; border: 1px solid #e7e7e7; }
+
+.pagination .prev, .pagination .next { padding: 0 16px; }
+
+.pagination .current.prev, .pagination .current.next { color: #999; border-color: #E7E7E7; background: #fff; }
 
 /*常用样式*/
 .mmyLf { float: left; }
