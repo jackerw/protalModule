@@ -84,6 +84,7 @@ define(function(require, exports, module) {
         var that=this;
         this.element.on("click","li",function(){
             that.svalue.text($(this).text())
+            that.svalue.attr('data-value',$(this).attr('data-value'));
             $(this).parent().hide()
             $(this).addClass("selectActive").siblings().removeClass("selectActive")
         })
