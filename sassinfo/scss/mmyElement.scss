@@ -120,6 +120,7 @@ $tableTextColor:#959595;
 	min-height: 100px;
 	border:$borderColor;
 	outline: none;
+	resize: none;
 	background-color: #fff;
 	transition: border-color .15s ease-in-out,
     			box-shadow .15s ease-in-out,
