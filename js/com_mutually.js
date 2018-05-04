@@ -66,11 +66,12 @@ define(function(require, exports, module) {
     /*调用*/
     $.fn.Checkset= Plugin;
    
-    //HTML配置调用
+   //如果有配置自动开关，则自动调用
     var $checkAll=$(document).find("[data-toggle='checkAll']");
-    $checkAll.Checkset();
-    
-})(window.jQuery || window.Zepto);
+    if($checkAll.length!=0){
+        $checkAll.Checkset();
+    }
+})(window.jQuery);
 
 /*
  * 模拟下拉选择
@@ -99,9 +100,9 @@ define(function(require, exports, module) {
     function Plugin() {
         return this.each(function () {
             var $this=$(this);
-            var data=$this.data('check');
+            var data=$this.data('select');
             if(!data){
-                $this.data('check', (data=new Nselect($this)))
+                $this.data('select', (data=new Nselect($this)))
             }
             data.handle();
         })
@@ -110,45 +111,133 @@ define(function(require, exports, module) {
     /*调用*/
     $.fn.Nselect= Plugin;
    
-    //HTML配置调用
+    //如果有配置自动开关，则自动调用
     var $sim=$(document).find("[data-toggle='nSelect']");
-    
-    $sim.Nselect();
 
-})(window.jQuery || window.Zepto);
+    if($sim!=0){
+        $sim.Nselect();
+    }
+    
+    
+
+})(window.jQuery);
 
 
 /*
- * 无刷新切换页面
+ * 常用验证脚本
  * */
 (function($){
-    function switchTab(element){
-        this.element=element;
+    function Nvalidate(element,options){
+        this.element    = element;
+        this.options    = $.extend({},Nvalidate.default,options)
+        this.targetList = this.element.find("input,textarea");
+        this.sure       = this.element.find(".mmySure");
     }
-    switchTab.prototype.handle=function(){
+    Nvalidate.default={
+        nullTips:"不能为空",
+        mobileTips:"电话号码格式错误",
+        emailTips:"邮箱格式错误",
+        successCallback:function(){}
+    }
+    //主处理
+    Nvalidate.prototype.handle=function(){
+        var that=this;
+        this.sure.click(function(){
+            that.verify(that.targetList)
+        })
+    }
+    //校验方法
+    Nvalidate.prototype.verify=function(obj){
+        var that=this,
+            title;
+        that.targetLength=[];
+        that.i=0;
+        $.each(obj,function(k,v){
+            var targetTitle=$(this).data('title');
+            var name=$(this).attr('class');
+            (targetTitle==undefined) ? title=" ": title=targetTitle;
+            //非空验证
+            if(name.indexOf('mmyRequire')>0){
+                that.targetLength.push('true');
+                if($(this).val()==""){
+                    alert(title+that.options.nullTips);
+                    return false;
+                }else{
+                    return that.ruleCheck($(this));
+                }
+            }else{
+                 return that.ruleCheck($(this));
+            }
+            
+        })
+        //验证成功回调
+        if(that.i==that.targetLength.length){
+            this.options.successCallback();
+        }
+        
+    }
+    //验证规则
+    Nvalidate.prototype.ruleCheck=function(targetObj){
+        var that=this;
+        var isNext=true;
+        var className=targetObj.attr('class');
+        var val=targetObj.val();
+        var ruleList={
+            regularmobile:/(^((\+?86)|(\(\+86\)))?\d{3,4}-{1}\d{7,8}(-{0,1}\d{3,4})?$)|(^((\+?86)|(\(\+86\)))?1\d{10}$)/,
+            regularEmail : /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+        }
+        if(className.indexOf('mmyMobile')> 0){
+            ruleSet(ruleList.regularmobile,val,that.options.mobileTips)
+        }
+        else if(className.indexOf('mmyEmail')> 0){
+            ruleSet(ruleList.regularEmail,val,that.options.emailTips)
+        }else{
+            that.i++;
+        }
+        if(className.indexOf('mmyRequire')<0){
+            that.targetLength.push('true');
+        }
+        return isNext;
 
+        function ruleSet(target,val,tips){
+         if(target.test(val)){
+                isNext=true;
+                that.i++;
+            }else{
+                alert(tips);
+                isNext=false;
+            }
+        }
+       
     }
 
     /*插件定义*/
-    function Plugin() {
+    function Plugin(options) {
         return this.each(function () {
             var $this=$(this);
-            var data=$this.data('check');
+            var data=$this.data('validate');
             if(!data){
-                $this.data('check', (data=new Checkset($this)))
+                $this.data('validate', (data=new Nvalidate($this,options)))
             }
             data.handle();
         })
     }
 
     /*调用*/
-    $.fn.switchTab= Plugin;
-   
-    //HTML配置调用
-    var $switch=$(document).find("[data-toggle='switchTab']");
-    
-    $switch.switchTab();
+    $.fn.Nvalidate= Plugin;
+    //如果有配置自动开关，则自动调用
+    var $Nvalidate=$(document).find("[data-toggle='Nvalidate']");
 
-})(window.jQuery || window.Zepto);
+    if($Nvalidate.length!=0){
+        $Nvalidate.Nvalidate()
+    }
+    $(".faultAdd").Nvalidate({
+        successCallback:function(){
+            alert("验证通过1");
+        }
+    });
+
+})(window.jQuery);
 
 });
+
