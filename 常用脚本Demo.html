@@ -83,11 +83,30 @@
 	</article>
 </div>
 
-<!--无刷新切换页面-->
+<!--脚本验证-->
 <div class="btnList">
-	<h1>无刷新切换页面</h1>
+	<h1>脚本验证</h1>
 	<article class="useInfo">
-		增加中。。。
+		<b>使用方法：</b>
+		<ol>
+			<li>组件层级结构，必须按照例子的结构来。</li>
+			<li>验证结构父元素需是<span>form</span></li>
+			<li>通过类名来驱动验证。比如必填：<span>mmyRequire</span>电话:<span>mmyMobile</span></li>
+			<li>邮箱:<span>mmyEmail</span>IP:<span>mmyIp</span></li>
+			<li>通过配置<span>data-title</span>自定义验证提示信息</li>
+		</ol>
+		<form>
+			<label style="width: 300px;display: block;" class="mgT10">
+				<input type="text" class="mmyInp mmyRequire" data-title="名字" placeholder="名字">
+			</label>
+			<label style="width: 300px;display: block;" class="mgT10">
+				<input type="text" class="mmyInp" placeholder="电话">
+			</label>
+			<label style="width: 300px;display: block;" class="mgT10">
+				<input type="text" class="mmyInp" placeholder="邮箱">
+			</label>
+			<a href="javascript:;" class="mmyBtn mgT10 sBtn">提交</a>
+		</form>
 	</article>
 </div>
 </body>
