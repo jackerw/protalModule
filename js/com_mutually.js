@@ -4,7 +4,7 @@
  */
 
 define(function(require, exports, module) {
-	var $ = require("jquery");
+    var $ = require("jquery");
 /*
  * 功能：全选，全选条件交互
  * */
@@ -18,36 +18,36 @@ define(function(require, exports, module) {
 
     Checkset.prototype.handle=function(){//主方法
        var that=this;
-	   this.$clistBg.on('click',"input[name!='checkAll']",function(){
-		   var isAll = false,
-    	   	  isCheck=$(this).prop('checked'),
-    		  listLen=that.$clistBg.find("input[name!='checkAll']").length;
-		   
-		   if(isCheck)
-			   that.checkFlag++;
-			else
-			   that.checkFlag--;
-		   
-		   if(listLen==that.checkFlag){
-			   isAll=true;
-		   }
-    	   that.$allCheck.prop("checked",isAll);
-	   })
-    	//全选
+       this.$clistBg.on('click',"input[name!='checkAll']",function(){
+           var isAll = false,
+              isCheck=$(this).prop('checked'),
+              listLen=that.$clistBg.find("input[name!='checkAll']").length;
+           
+           if(isCheck)
+               that.checkFlag++;
+            else
+               that.checkFlag--;
+           
+           if(listLen==that.checkFlag){
+               isAll=true;
+           }
+           that.$allCheck.prop("checked",isAll);
+       })
+        //全选
        this.$allCheck.click(function(){
-    	   that.$checkList=that.$clistBg.find("input[name!='checkAll']");
-    	   var listLen=that.$clistBg.find("input[name!='checkAll']").length;
-    	   if($(this).prop("checked")){
-				that.$checkList.each(function(){
-					$(this).prop("checked",true);
-				})
-				that.checkFlag=listLen;
-			}else{
-				that.$checkList.each(function(){
-					$(this).prop("checked",false);
-				})
-				that.checkFlag=0;
-			}
+           that.$checkList=that.$clistBg.find("input[name!='checkAll']");
+           var listLen=that.$clistBg.find("input[name!='checkAll']").length;
+           if($(this).prop("checked")){
+                that.$checkList.each(function(){
+                    $(this).prop("checked",true);
+                })
+                that.checkFlag=listLen;
+            }else{
+                that.$checkList.each(function(){
+                    $(this).prop("checked",false);
+                })
+                that.checkFlag=0;
+            }
        })
     };
     
@@ -130,19 +130,21 @@ define(function(require, exports, module) {
     function Nvalidate(element,options){
         this.element    = element;
         this.options    = $.extend({},Nvalidate.default,options)
-        this.targetList = this.element.find("input,textarea");
-        this.sure       = this.element.find(".mmySure");
+        this.targetList = this.element.parents("form").find("input,textarea");
     }
     Nvalidate.default={
         nullTips:"不能为空",
         mobileTips:"电话号码格式错误",
         emailTips:"邮箱格式错误",
+        ipTips:"IP格式错误",
+        verifyFront:function(){},
         successCallback:function(){}
     }
     //主处理
     Nvalidate.prototype.handle=function(){
         var that=this;
-        this.sure.click(function(){
+        this.element.click(function(){
+            that.options.verifyFront();
             that.verify(that.targetList)
         })
     }
@@ -154,10 +156,10 @@ define(function(require, exports, module) {
         that.i=0;
         $.each(obj,function(k,v){
             var targetTitle=$(this).data('title');
-            var name=$(this).attr('class');
+            var name=$(this).prop('class');
             (targetTitle==undefined) ? title=" ": title=targetTitle;
             //非空验证
-            if(name.indexOf('mmyRequire')>0){
+            if(name.indexOf('mmyRequire')>-1){
                 that.targetLength.push('true');
                 if($(this).val()==""){
                     alert(title+that.options.nullTips);
@@ -180,23 +182,32 @@ define(function(require, exports, module) {
     Nvalidate.prototype.ruleCheck=function(targetObj){
         var that=this;
         var isNext=true;
-        var className=targetObj.attr('class');
+        var className=targetObj.prop('class');
         var val=targetObj.val();
         var ruleList={
             regularmobile:/(^((\+?86)|(\(\+86\)))?\d{3,4}-{1}\d{7,8}(-{0,1}\d{3,4})?$)|(^((\+?86)|(\(\+86\)))?1\d{10}$)/,
-            regularEmail : /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+            regularEmail : /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+            reqularIp:/^((25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))$/
         }
-        if(className.indexOf('mmyMobile')> 0){
-            ruleSet(ruleList.regularmobile,val,that.options.mobileTips)
+        if(val!=""){
+            /*表单值不为空的时候才验证格式*/
+             if(className.indexOf('mmyMobile')> 0){
+                ruleSet(ruleList.regularmobile,val,that.options.mobileTips)
+            }
+            else if(className.indexOf('mmyEmail')> 0){
+                ruleSet(ruleList.regularEmail,val,that.options.emailTips)
+            }
+            else if(className.indexOf('mmyIp')> 0){
+                ruleSet(ruleList.reqularIp,val,that.options.ipTips)
+            }
+            else{
+                that.i++;
+            }
+            if(className.indexOf('mmyRequire')<0){
+                that.targetLength.push('true');
+            }
         }
-        else if(className.indexOf('mmyEmail')> 0){
-            ruleSet(ruleList.regularEmail,val,that.options.emailTips)
-        }else{
-            that.i++;
-        }
-        if(className.indexOf('mmyRequire')<0){
-            that.targetLength.push('true');
-        }
+       
         return isNext;
 
         function ruleSet(target,val,tips){
@@ -225,19 +236,11 @@ define(function(require, exports, module) {
 
     /*调用*/
     $.fn.Nvalidate= Plugin;
-    //如果有配置自动开关，则自动调用
-    var $Nvalidate=$(document).find("[data-toggle='Nvalidate']");
-
-    if($Nvalidate.length!=0){
-        $Nvalidate.Nvalidate()
-    }
-    $(".faultAdd").Nvalidate({
+    $(".sBtn").Nvalidate({
         successCallback:function(){
-            alert("验证通过1");
+            alert('已经验证成功，可以做你想做的事了')
         }
-    });
-
+    })
 })(window.jQuery);
 
 });
-
